@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">FlightMaster</string>
+    <string name="app_name">Flight Master</string>
+    <string name="airport_label">Airport</string>
+    <string name="departure_label">Departure</string>
+    <string name="arrival_label">Arrival</string>
+    <string name="search_button">Search</string>
 </resources>
