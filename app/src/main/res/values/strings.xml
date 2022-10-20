@@ -4,4 +4,6 @@
     <string name="departure_label">Departure</string>
     <string name="arrival_label">Arrival</string>
     <string name="search_button">Search</string>
+    <string name="from_label">From</string>
+    <string name="to_label">To</string>
 </resources>
