@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flight Master</string>
+    <string name="airport_label">Aéroport</string>
+    <string name="departure_label">Départ</string>
+    <string name="arrival_label">Arrivée</string>
+    <string name="search_button">Rechercher</string>
+    <string name="from_label">Du</string>
+    <string name="to_label">Au</string>
+</resources>
