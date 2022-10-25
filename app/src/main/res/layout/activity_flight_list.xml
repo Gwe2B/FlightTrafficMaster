@@ -7,4 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".FlightListActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/flights_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

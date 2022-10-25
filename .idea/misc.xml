@@ -17,6 +17,7 @@
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/font/inter.xml" value="0.284375" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_flight_list.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/flight_cell.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>
     </option>
