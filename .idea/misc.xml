@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable-anydpi/ic_spinner_drop.xml" value="0.259" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2535" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_backgound.xml" value="0.2535" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_ic.xml" value="0.2535" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_style.xml" value="0.2535" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_bg.xml" value="0.2575" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_thumb.xml" value="0.2575" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_thumb_color.xml" value="0.2575" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_track.xml" value="0.2575" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/font-v26/inter.xml" value="0.284375" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/font/inter.xml" value="0.284375" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>

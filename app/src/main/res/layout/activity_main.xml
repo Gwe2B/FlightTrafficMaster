@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16px"
+    android:padding="14dp"
+    android:background="@color/mediumgray"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,55 +23,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/airport_label"
-        app:layout_constraintBottom_toTopOf="@id/airport_label"
+        app:layout_constraintBottom_toTopOf="@+id/airport_spinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/airport_spinner" />
 
     <Spinner
         android:id="@+id/airport_spinner"
-        android:layout_width="300dp"
+        android:background="@drawable/spinner_background"
+        android:layout_width="215dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16px"
-        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"
+        android:minHeight="20dp"
         app:layout_constraintBottom_toTopOf="@+id/switch_dep_arr"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/airport_label" />
-
-    <ImageView
-        android:id="@+id/departure_ico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/departure_label"
-        app:layout_constraintEnd_toStartOf="@+id/departure_label"
-        app:layout_constraintTop_toTopOf="@+id/departure_label"
-        app:srcCompat="@mipmap/takeoff" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/departure_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/departure_label"
         app:layout_constraintBottom_toBottomOf="@id/switch_dep_arr"
         app:layout_constraintRight_toLeftOf="@id/switch_dep_arr"
         app:layout_constraintTop_toTopOf="@id/switch_dep_arr" />
 
-    <ImageView
-        android:id="@+id/arrival_ico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/arrival_label"
-        app:layout_constraintStart_toEndOf="@+id/arrival_label"
-        app:layout_constraintTop_toTopOf="@+id/arrival_label"
-        app:srcCompat="@mipmap/landing" />
-
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_dep_arr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:minHeight="48dp"
+        app:track="@drawable/switch_track"
+        android:thumb="@drawable/switch_thumb"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -79,16 +64,19 @@
         android:id="@+id/arrival_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:text="@string/arrival_label"
         app:layout_constraintBottom_toBottomOf="@id/switch_dep_arr"
         app:layout_constraintLeft_toRightOf="@id/switch_dep_arr"
         app:layout_constraintTop_toTopOf="@id/switch_dep_arr" />
 
     <Button
+        android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_button"
+        android:textAllCaps="false"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
