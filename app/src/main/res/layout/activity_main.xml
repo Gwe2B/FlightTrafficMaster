@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="14dp"
+    android:background="@color/mediumgray"
     tools:context=".MainActivity">
 
     <TextView
@@ -28,6 +29,7 @@
 
     <Spinner
         android:id="@+id/airport_spinner"
+        android:background="@drawable/spinner_background"
         android:layout_width="215dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -69,6 +71,7 @@
         app:layout_constraintTop_toTopOf="@id/switch_dep_arr" />
 
     <Button
+        android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_button"

@@ -9,7 +9,6 @@
         <item name="colorOnSecondary">@color/darkgray</item>
 
         <!-- Customize your theme here. -->
-        <item name="android:background">@color/mediumgray</item>
 
         <!-- Text Settings -->
         <item name="android:textColor">@color/darkgray</item>
@@ -24,7 +23,7 @@
     </style>
 
     <!-- Spinners Style -->
-    <style name="Theme.FlightMaster.Spinner" parent="Widget.AppCompat.TextView">
+    <style name="Theme.FlightMaster.Spinner" parent="Widget.AppCompat.Spinner">
         <item name="overlapAnchor">true</item>
         <item name="android:background">@drawable/spinner_background</item>
     </style>
