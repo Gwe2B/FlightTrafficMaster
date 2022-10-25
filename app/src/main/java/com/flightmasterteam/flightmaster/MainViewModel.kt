@@ -17,16 +17,15 @@ class MainViewModel : ViewModel() {
         val airportList = Utils.generateAirportList()
         airportListLiveData.value = airportList
         val airportNamesList = ArrayList<String>()
-        //Populate the list of airport names
+
+        // Populate the list of airport names
         for (airport in airportList) {
             airportNamesList.add(airport.getFormattedName())
         }
         airportListNamesLiveData.value = airportNamesList
     }
 
-    enum class DateType {
-        BEGIN, END
-    }
+    enum class DateType { BEGIN, END }
 
     fun getBeginDateLiveData(): LiveData<Calendar>{
         return beginDateLiveData
@@ -37,7 +36,8 @@ class MainViewModel : ViewModel() {
     }
 
     fun updateCalendarLiveData(dateType: DateType, calendar: Calendar){
-        if(dateType == DateType.BEGIN) beginDateLiveData.value = calendar else endDateLiveData.value = calendar
+        if(dateType == DateType.BEGIN) beginDateLiveData.value = calendar
+        else endDateLiveData.value = calendar
     }
 
     fun getAirportNamesListLiveData():LiveData<List<String>>{
