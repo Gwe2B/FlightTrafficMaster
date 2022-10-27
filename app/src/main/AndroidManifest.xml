@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flightmasterteam.flightmaster">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".FlightApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FlightMaster"
-        android:name=".FlightApplication">
+        android:theme="@style/Theme.FlightMaster">
+        <activity
+            android:name=".FlightListActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

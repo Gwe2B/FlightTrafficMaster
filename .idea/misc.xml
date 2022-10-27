@@ -6,6 +6,7 @@
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable-anydpi/ic_spinner_drop.xml" value="0.259" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2535" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_backgound.xml" value="0.2535" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_background.xml" value="0.264" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_ic.xml" value="0.2535" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/spinner_style.xml" value="0.2535" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_bg.xml" value="0.2575" />
@@ -14,7 +15,12 @@
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/drawable/switch_track.xml" value="0.2575" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/font-v26/inter.xml" value="0.284375" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/font/inter.xml" value="0.284375" />
-        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout-w400dp/activity_flight_list.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_flight_list.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/flight_cell.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/fragment_flight_list.xml" value="0.16052631578947368" />
+        <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/layout/fragment_flight_map.xml" value="0.12708333333333333" />
         <entry key="..\:/AndroidProjects/FlightMaster/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>
     </option>
