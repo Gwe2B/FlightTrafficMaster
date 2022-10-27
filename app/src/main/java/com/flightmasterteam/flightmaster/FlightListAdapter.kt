@@ -30,7 +30,6 @@ class FlightListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val flight = dataSet[position]
         val cell = holder.itemView as FlightCell
-        cell.setBackgroundColor(if(position%2 == 0) Color.YELLOW else Color.GRAY)
 
         cell.bindData(flight)
         cell.setOnClickListener() {

@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FlightCell : LinearLayout {
 
@@ -49,15 +51,21 @@ class FlightCell : LinearLayout {
 
     fun bindData(flight: FlightModel) {
         Log.d("TAG", "message")
+        val depTime = Date()
+        val arrTime = Date()
+
+        depTime.time = flight.firstSeen * 1000
+        arrTime.time = flight.lastSeen * 1000
+
         //fill your views
-        depDateTextView.text = flight.firstSeen.toString()
+        depDateTextView.text = Utils.dateToString(depTime)
         depAirportTextView.text = flight.estDepartureAirport
-        //depHourTextView.text =
+        depHourTextView.text = android.text.format.DateFormat.format("HH:mm", depTime)
         flightNameTextView.text = flight.callsign
         flightDurationTextView.text = (flight.lastSeen - flight.firstSeen).toString()
-        arrDateTextView.text = flight.lastSeen.toString()
+        arrDateTextView.text = Utils.dateToString(arrTime)
         arrAirportTextView.text = flight.estArrivalAirport
-        //depHourTextView.text =
+        arrHourTextView.text = android.text.format.DateFormat.format("HH:mm", arrTime)
     }
 
     private fun initLayout() {

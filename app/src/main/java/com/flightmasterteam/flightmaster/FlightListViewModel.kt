@@ -10,9 +10,29 @@ import com.google.gson.JsonParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class FlightListViewModel: ViewModel() {
+    private var DEPARTURE_API_URL = "https://opensky-network.org/api/flights/departure"
+    private var ARRIVAL_API_URL = "https://opensky-network.org/api/flights/arrival"
+
     private val flightListLiveData = MutableLiveData<List<FlightModel>>(ArrayList())
+    private val clickedFlightLiveData = MutableLiveData<FlightModel>()
+
+    var icao: String = ""
+    var isArrival: Boolean = false
+    var depTime: Long = 0
+    var arrTime: Long = 0
+
+    fun getClickedFlightLiveData(): LiveData<FlightModel> {
+        return clickedFlightLiveData
+    }
+
+    fun setClickedFlightLiveData(flight: FlightModel) {
+        clickedFlightLiveData.value = flight
+    }
 
     fun getFlightListLiveData(): LiveData<List<FlightModel>> {
         return flightListLiveData
@@ -22,15 +42,13 @@ class FlightListViewModel: ViewModel() {
         flightListLiveData.value = flights
     }
 
-    fun doRequest(begin: Long, end: Long, isArrival: Boolean, icao: String) {
+    fun doFlightListRequest() {
         viewModelScope.launch {
-            val url =
-                if(isArrival) "https://opensky-network.org/api/flights/arrival"
-                else "https://opensky-network.org/api/flights/departure"
+            val url = if(isArrival) ARRIVAL_API_URL else DEPARTURE_API_URL
 
             val requestParameters = HashMap<String, String>()
-            requestParameters["begin"] = begin.toString()
-            requestParameters["end"] = end.toString()
+            requestParameters["begin"] = depTime.toString()
+            requestParameters["end"] = arrTime.toString()
             requestParameters["airport"] = icao
 
             val result = withContext(Dispatchers.IO) {

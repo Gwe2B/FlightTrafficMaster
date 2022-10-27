@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
+    android:padding="5dp"
+    android:layout_margin="8dp"
+    android:background="@color/lightgray"
     android:orientation="horizontal">
 
     <LinearLayout

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FlightListFragment">
+    tools:context=".FlightListFragment"
+    android:orientation="vertical"
+    android:background="@color/mediumgray">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:src="@drawable/logo_ic"
+        android:layout_width="97dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="11dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/flights_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" />
 
-</FrameLayout>
+</LinearLayout>
