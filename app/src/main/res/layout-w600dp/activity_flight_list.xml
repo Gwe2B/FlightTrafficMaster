@@ -20,6 +20,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:name="com.flightmasterteam.flightmaster.FlightMapFragment" />
+        android:name="com.flightmasterteam.flightmaster.MapFragment" />
 
 </LinearLayout>
