@@ -10,16 +10,21 @@ import com.google.gson.JsonParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONException
+import org.json.JSONObject
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
+import kotlin.math.log
+
+private const val DEPARTURE_API_URL = "https://opensky-network.org/api/flights/departure"
+private const val ARRIVAL_API_URL = "https://opensky-network.org/api/flights/arrival"
+private const val AIRPLANE_TRACK_API_URL = "https://opensky-network.org/api/tracks/all"
 
 class FlightListViewModel: ViewModel() {
-    private var DEPARTURE_API_URL = "https://opensky-network.org/api/flights/departure"
-    private var ARRIVAL_API_URL = "https://opensky-network.org/api/flights/arrival"
-
     private val flightListLiveData = MutableLiveData<List<FlightModel>>(ArrayList())
     private val clickedFlightLiveData = MutableLiveData<FlightModel>()
+    private val clickedFlightTrackLiveData = MutableLiveData<TrackModel>()
 
     var icao: String = ""
     var isArrival: Boolean = false
@@ -40,6 +45,65 @@ class FlightListViewModel: ViewModel() {
 
     fun setFlightListLiveData(flights: List<FlightModel>) {
         flightListLiveData.value = flights
+    }
+
+    fun getClickedFlightTrackLiveData(): LiveData<TrackModel> {
+        return clickedFlightTrackLiveData
+    }
+
+    fun setFlightTrackLiveData(track: TrackModel) {
+        clickedFlightTrackLiveData.value = track
+    }
+
+    fun doAirplaneTrackRequest() {
+        viewModelScope.launch {
+            val selectedFlight = getClickedFlightLiveData().value!!
+            val requestParameters = HashMap<String, String>()
+            requestParameters["icao24"] = selectedFlight.icao24
+            requestParameters["time"] = selectedFlight.firstSeen.toString()
+
+            val result = withContext(Dispatchers.IO) {
+                RequestManager.getSuspended(AIRPLANE_TRACK_API_URL, requestParameters)
+            }
+
+            if(result != null) {
+                val jObject = JSONObject(result)
+                val jArray= jObject.getJSONArray("path")
+                val jArraySize = jArray.length() - 1
+                val pathArr = ArrayList<PathPointModel>()
+
+                for(i in 0..jArraySize) {
+                    try {
+                        val el = jArray.getJSONArray(i)
+                        pathArr.add(
+                            PathPointModel(
+                                el.getLong(TIME_INDEX),
+                                el.getDouble(LATITUDE_INDEX),
+                                el.getDouble(LONGITUDE_INDEX),
+                                el.getDouble(ALTITUDE_INDEX),
+                                el.getDouble(TRUE_TRACK_INDEX),
+                                el.getBoolean(ON_GROUND_INDEX)
+                            )
+                        )
+                    } catch (err: JSONException) {
+                        Log.e("FlightTrack", "Error at index $i of the array")
+                        Log.e("FlightTrack", err.toString())
+                    }
+                }
+
+                val tracker = TrackModel(
+                    jObject.getString("icao24"),
+                    jObject.getLong("startTime"),
+                    jObject.getLong("endTime"),
+                    jObject.getString("callsign"),
+                    pathArr
+                )
+
+                setFlightTrackLiveData(tracker)
+            } else {
+                Log.e("REQUEST", "ERROR NO RESULT")
+            }
+        }
     }
 
     fun doFlightListRequest() {

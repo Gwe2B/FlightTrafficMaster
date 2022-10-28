@@ -1,16 +1,9 @@
 package com.flightmasterteam.flightmaster
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class FlightListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,15 +18,15 @@ class FlightListActivity : AppCompatActivity() {
         viewModel.isArrival = intent.getBooleanExtra("IS_ARRIVAL", false)
         viewModel.icao = intent.getStringExtra("ICAO")!!
 
-        viewModel.getClickedFlightLiveData().observe(this, Observer {
+        viewModel.getClickedFlightLiveData().observe(this) {
             // Display the right flight
-            if(!isTablet) {
+            if (!isTablet) {
                 // Replace the fragment
                 val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.fragment_flight_list, FlightMapFragment.newInstance())
+                transaction.replace(R.id.fragment_flight_list, MapFragment())
                 transaction.addToBackStack(null)
                 transaction.commit()
             }
-        })
+        }
     }
 }
