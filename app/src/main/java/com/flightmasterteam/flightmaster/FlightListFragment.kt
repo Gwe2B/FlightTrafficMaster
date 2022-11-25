@@ -44,9 +44,9 @@ class FlightListFragment : Fragment(), FlightListAdapter.OnCellClickListener {
             var recyclerView = view.findViewById<RecyclerView>(R.id.flights_recycler_view)
             val txtNoResult = view.findViewById<TextView>(R.id.no_flight_message)
             val txtExplain = view.findViewById<TextView>(R.id.message_explain)
-            if(it.size<=0){
+            if(it.size==0){
                 txtNoResult.visibility = View.VISIBLE
-                txtExplain.visibility = view.visibility
+                txtExplain.visibility = View.VISIBLE
             }
             else {
                 // Retrieve the recycler view

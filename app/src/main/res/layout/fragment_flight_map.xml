@@ -6,10 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".FlightMapFragment">
 
+
+
+
+    <LinearLayout
+        android:layout_width="148dp"
+        android:layout_height="101dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|right"
+        android:padding="10dp"
+        android:background="@color/teal">
+
+        <TextView
+            android:id="@+id/depDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/depAirportTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/depTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/arrDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/arrAirportTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/arrTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/flightDurationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:id="@+id/flightNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
     <!-- TODO: Update blank fragment layout -->
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </FrameLayout>
