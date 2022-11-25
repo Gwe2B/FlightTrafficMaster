@@ -1,6 +1,7 @@
 package com.flightmasterteam.flightmaster
 
 import android.util.Log
+import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -130,6 +131,7 @@ class FlightListViewModel: ViewModel() {
                 setFlightListLiveData(flightList)
             } else {
                 Log.e("REQUEST", "ERROR NO RESULT")
+
             }
         }
     }

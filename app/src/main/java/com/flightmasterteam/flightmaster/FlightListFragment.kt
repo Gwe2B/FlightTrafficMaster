@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -40,18 +41,27 @@ class FlightListFragment : Fragment(), FlightListAdapter.OnCellClickListener {
         viewModel.doFlightListRequest()
 
         viewModel.getFlightListLiveData().observe(viewLifecycleOwner, Observer {
-            // Retrieve the recycler view
             var recyclerView = view.findViewById<RecyclerView>(R.id.flights_recycler_view)
+            val txtNoResult = view.findViewById<TextView>(R.id.no_flight_message)
+            val txtExplain = view.findViewById<TextView>(R.id.message_explain)
+            if(it.size<=0){
+                txtNoResult.visibility = View.VISIBLE
+                txtExplain.visibility = view.visibility
+            }
+            else {
+                // Retrieve the recycler view
+                recyclerView.visibility = View.VISIBLE
 
-            // Attach an Adapter
-            recyclerView.adapter = FlightListAdapter(it, this)
+                // Attach an Adapter
+                recyclerView.adapter = FlightListAdapter(it, this)
 
-            // Attach a LayoutManager
-            recyclerView.layoutManager = LinearLayoutManager(
-                requireActivity(),
-                LinearLayoutManager.VERTICAL,
-                false
-            )
+                // Attach a LayoutManager
+                recyclerView.layoutManager = LinearLayoutManager(
+                    requireActivity(),
+                    LinearLayoutManager.VERTICAL,
+                    false
+                )
+            }
         })
     }
 
