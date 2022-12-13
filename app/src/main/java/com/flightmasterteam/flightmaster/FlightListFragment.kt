@@ -42,26 +42,19 @@ class FlightListFragment : Fragment(), FlightListAdapter.OnCellClickListener {
 
         viewModel.getFlightListLiveData().observe(viewLifecycleOwner, Observer {
             var recyclerView = view.findViewById<RecyclerView>(R.id.flights_recycler_view)
-            val txtNoResult = view.findViewById<TextView>(R.id.no_flight_message)
-            val txtExplain = view.findViewById<TextView>(R.id.message_explain)
-            if(it.size==0){
-                txtNoResult.visibility = View.VISIBLE
-                txtExplain.visibility = View.VISIBLE
-            }
-            else {
-                // Retrieve the recycler view
-                recyclerView.visibility = View.VISIBLE
 
-                // Attach an Adapter
-                recyclerView.adapter = FlightListAdapter(it, this)
+            // Retrieve the recycler view
+            recyclerView.visibility = View.VISIBLE
 
-                // Attach a LayoutManager
-                recyclerView.layoutManager = LinearLayoutManager(
-                    requireActivity(),
-                    LinearLayoutManager.VERTICAL,
-                    false
-                )
-            }
+            // Attach an Adapter
+            recyclerView.adapter = FlightListAdapter(it, this)
+
+            // Attach a LayoutManager
+            recyclerView.layoutManager = LinearLayoutManager(
+                requireActivity(),
+                LinearLayoutManager.VERTICAL,
+                false
+            )
         })
     }
 

@@ -111,7 +111,9 @@ class FlightListViewModel: ViewModel() {
                     Log.e("REQUEST", "ERROR NO RESULT")
                 }
             } catch(e: IOException) {
-                setErrorLiveData("Unable to retrieve the data from the API.\nPlease try again later.")
+                setErrorLiveData(
+                    FlightApplication.appResources.getString(R.string.api_error)
+                )
             }
         }
     }
@@ -148,7 +150,9 @@ class FlightListViewModel: ViewModel() {
                     Log.e("REQUEST", "ERROR NO RESULT")
                 }
             } catch(e: IOException) {
-                setErrorLiveData("Unable to retrieve the data from the API.\nPlease try again later.")
+                setErrorLiveData(
+                    FlightApplication.appResources.getString(R.string.api_error)
+                )
             }
         }
     }
