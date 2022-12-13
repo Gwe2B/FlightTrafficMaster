@@ -63,6 +63,8 @@ class RequestManager {
                     "RequestManager",
                     "Error while doing GET request (url: " + finalSourceUrl + ") - " + e.message
                 )
+
+                throw IOException()
             }
             return null
         }
@@ -111,6 +113,8 @@ class RequestManager {
                     "RequestManager",
                     "Error while doing GET request (url: " + finalSourceUrl + ") - " + e.message
                 )
+
+                throw IOException()
             }
             return null
         }

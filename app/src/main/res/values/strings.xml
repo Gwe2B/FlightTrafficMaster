@@ -6,6 +6,7 @@
     <string name="search_button">Search</string>
     <string name="from_label">From</string>
     <string name="to_label">To</string>
+    <string name="api_error">Unable to retrieve the data from the API.\nPlease try again later.</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>
