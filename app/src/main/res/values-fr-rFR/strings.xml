@@ -7,4 +7,5 @@
     <string name="search_button">Rechercher</string>
     <string name="from_label">Du</string>
     <string name="to_label">Au</string>
+    <string name="api_error">Impossible de récupérer les données de l\'API.\nMerci de réessayer plus tard.</string>
 </resources>
